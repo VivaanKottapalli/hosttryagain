@@ -220,6 +220,8 @@ async def announce(ctx, channel: discord.TextChannel, *, msg):
     await ctx.send('Sent message!')
     await channel.send(f'{msg}')
 
-
+@client.command()
+async def ping(ctx):
+    await ctx.send(f"Pong!{round(client.latency * 1000)}ms")
 
 client.run('ODA0Mzg3MjA3NDIyODA0MDA4.YBLl9w.8ZEzxE7Vzw57tjQcv52NHYBXQpM')
