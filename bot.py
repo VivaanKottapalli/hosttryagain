@@ -1,22 +1,16 @@
 import random
 import discord
 from discord.ext import commands,tasks
-import youtube_dl
 from discord.utils import get
 import os
 import shutil
 from itertools import cycle
 import datetime
 import json
-from random import choice
-import akinator
-import praw
-from PIL import Image
-from io import BytesIO
 import aiofiles
 from discord.utils import get
 from os import system
-from time import sleep
+
 
 
 def get_prefix(client,message):
