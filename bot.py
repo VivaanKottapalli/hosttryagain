@@ -3,13 +3,9 @@ import discord
 from discord.ext import commands,tasks
 from discord.utils import get
 import os
-import shutil
 from itertools import cycle
 import datetime
-import json
-import aiofiles
 from discord.utils import get
-from os import system
 
 
 
