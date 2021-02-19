@@ -226,7 +226,7 @@ async def ping(ctx):
 
 
 @client.command()
-async def server(ctx, arg):
+async def server(ctx):
     r = requests.get(r = requests.get('https://api.minehut.com/server/c0ba1t?byName=true'))
     json_data =  r.json
     print(json_data)
