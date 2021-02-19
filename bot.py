@@ -6,7 +6,7 @@ import os
 from itertools import cycle
 import datetime
 from discord.utils import get
-
+import requests
 
 
 def get_prefix(client,message):
@@ -223,5 +223,24 @@ async def announce(ctx, channel: discord.TextChannel, *, msg):
 @client.command()
 async def ping(ctx):
     await ctx.send(f"Pong!{round(client.latency * 1000)}ms")
+
+
+@client.command()
+async def server(ctx, arg):
+    r = requests.get(r = requests.get('https://api.minehut.com/server/c0ba1t?byName=true'))
+    json_data =  r.json
+    print(json_data)
+    description = json_data["server"]["motd"]
+    online = str(json_data["server"]["online"])
+    playercount = str(json_data["server"]["playercount"])
+
+    embed = discord.Embed{
+        title="c0ba1t sever info",
+        description='Description: ' + description + 'n/Online Status:' + online + '/nPlayers Online: ' + playercount,
+        color= discord.Color.purple()
+    }
+    await ctx.send(embed=embed)
+
+
 
 client.run('ODA0Mzg3MjA3NDIyODA0MDA4.YBLl9w.8ZEzxE7Vzw57tjQcv52NHYBXQpM')
