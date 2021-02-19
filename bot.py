@@ -234,11 +234,11 @@ async def server(ctx):
     online = str(json_data["server"]["online"])
     playercount = str(json_data["server"]["playercount"])
 
-    embed = discord.Embed{
+    embed = discord.Embed(
         title="c0ba1t sever info",
         description='Description: ' + description + 'n/Online Status:' + online + '/nPlayers Online: ' + playercount,
         color= discord.Color.purple()
-    }
+    )
     await ctx.send(embed=embed)
 
 
